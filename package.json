@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ronanokane/GTranslateApi#readme",
   "dependencies": {
-    "@iamtraction/google-translate": "^2.0.1"
+    "@iamtraction/google-translate": "^2.0.1",
+    "express": "^4.18.2"
   }
 }
