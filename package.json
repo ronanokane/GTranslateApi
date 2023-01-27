@@ -1,0 +1,22 @@
+{
+  "name": "gtranslateapi",
+  "version": "1.0.0",
+  "description": "A REST api for google-translate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronanokane/GTranslateApi.git"
+  },
+  "author": "Ronan O'Kane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronanokane/GTranslateApi/issues"
+  },
+  "homepage": "https://github.com/ronanokane/GTranslateApi#readme",
+  "dependencies": {
+    "@iamtraction/google-translate": "^2.0.1"
+  }
+}
