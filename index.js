@@ -1,4 +1,4 @@
-const translate = require('@iamtraction/google-translate');
+const {translate, languages} = require('@iamtraction/google-translate');
 const express = require('express');
 const app = express();
 
@@ -13,6 +13,10 @@ app.get('/:langCode/:text', async (req, res)=>{
     .catch((err)=>{
         console.log(err.message);
     });
+});
+
+app.get('/languages', (req, res)=>{
+    res.status(200).send(JSON.stringify(languages))
 });
 
 const port=process.argv[2] || 3000;
