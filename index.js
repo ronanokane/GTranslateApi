@@ -15,5 +15,5 @@ app.get('/:langCode/:text', async (req, res)=>{
     });
 });
 
-const port=process.argv[2];
+const port=process.argv[2] || 3000;
 app.listen(port, ()=>console.log('listening on port ' + port));
