@@ -1,16 +1,18 @@
 const translate = require('@iamtraction/google-translate');
 const express = require('express');
 const {languages}=translate;
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 
 app.get('/:langCode/:text', async (req, res)=>{
     translate(req.params.text, {to: req.params.langCode})
     .then(({text})=>{
-        res.send({text: text});
+        res.status(200).json({text: text});
     })
     .catch((err)=>{
-        res.status(404).send({error: true,message: err.message});
+        res.status(404).json({error: true,message: err.message});
     })
     .catch((err)=>{
         console.log(err.message);
@@ -18,7 +20,11 @@ app.get('/:langCode/:text', async (req, res)=>{
 });
 
 app.get('/languages', (req, res)=>{
-    res.status(200).send(JSON.stringify(languages))
+    try{
+        res.status(200).json(languages)
+    }catch(err){
+        console.log(err.message)
+    }
 });
 
 const port=process.argv[2] || 3000;
