@@ -1,10 +1,8 @@
 const translate = require('@iamtraction/google-translate');
 const express = require('express');
 const {languages}=translate;
-const cors = require('cors');
 
 const app = express();
-app.use(cors());
 
 app.get('/:langCode/:text', async (req, res)=>{
     translate(req.params.text, {to: req.params.langCode})
